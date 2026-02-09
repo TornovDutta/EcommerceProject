@@ -6,7 +6,7 @@
       "overview": "The Complete Coding Interview Guide in Java is an all-inclusive solution guide with meticulously crafted code examples and proven best practices for tackling the toughest coding interview questions.",
       "long_description": "The Complete Coding Interview Guide in Java is an all-inclusive solution guide with meticulously crafted code examples and proven best practices for tackling the toughest coding interview questions. This book will help you to verify your Java knowledge and basic coding skills to the interviewer.",
       "price": 29,
-      "poster": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "poster": "https://images.unsplash.com/photo-1544947950-fa07a98d237f",
       "image_local": "",
       "rating": 5,
       "in_stock": true,
@@ -15,10 +15,10 @@
     {
       "id": 2,
       "name": "Head First Design Patterns",
-      "overview": "Head First Design Patterns is a great way to look at the tough subject of design patterns. This book simulates the way your brain works to make the learning process more efficient.",
-      "long_description": "Head First Design Patterns is a great way to look at the tough subject of design patterns. This book simulates the way your brain works to make the learning process more efficient. It uses the latest research in cognitive science and learning theory to craft a multi-sensory learning experience.",
+      "overview": "Head First Design Patterns is a great way to look at the tough subject of design patterns.",
+      "long_description": "Head First Design Patterns simulates the way your brain works to make learning more effective using cognitive science and multi-sensory techniques.",
       "price": 35,
-      "poster": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "poster": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73",
       "image_local": "",
       "rating": 4.5,
       "in_stock": true,
@@ -27,10 +27,10 @@
     {
       "id": 3,
       "name": "Clean Code",
-      "overview": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code.",
-      "long_description": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn't have to be that way. Noted software expert Robert C. Martin presents a revolutionary paradigm with Clean Code: A Handbook of Agile Software Craftsmanship.",
+      "overview": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees.",
+      "long_description": "Clean Code by Robert C. Martin presents principles and best practices for writing maintainable, readable, and professional code.",
       "price": 42,
-      "poster": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "poster": "https://images.unsplash.com/photo-1516979187457-637abb4f9353",
       "image_local": "",
       "rating": 5,
       "in_stock": true,
@@ -39,10 +39,10 @@
     {
       "id": 4,
       "name": "The Pragmatic Programmer",
-      "overview": "The Pragmatic Programmer is one of those rare tech books you’ll read, re-read, and read again over the years. Whether you’re new to the field or an experienced practitioner, you’ll come away with fresh insights each and every time.",
-      "long_description": "The Pragmatic Programmer is one of those rare tech books you’ll read, re-read, and read again over the years. Whether you’re new to the field or an experienced practitioner, you’ll come away with fresh insights each and every time. Dave Thomas and Andy Hunt wrote the first edition of this influential book in 1999 to help their clients create better software and rediscover the joy of coding.",
+      "overview": "A timeless book that helps developers improve their thinking and coding habits.",
+      "long_description": "Written by Dave Thomas and Andy Hunt, this book offers practical advice on software craftsmanship, career development, and problem solving.",
       "price": 38,
-      "poster": "https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "poster": "https://images.unsplash.com/photo-1532012197267-da84d127e765",
       "image_local": "",
       "rating": 4.8,
       "in_stock": true,
@@ -51,10 +51,10 @@
     {
       "id": 5,
       "name": "JavaScript: The Good Parts",
-      "overview": "Most programming languages contain good and bad parts, but JavaScript has more than its share of the bad, having been developed and released in a hurry before it could be refined.",
-      "long_description": "Most programming languages contain good and bad parts, but JavaScript has more than its share of the bad, having been developed and released in a hurry before it could be refined. This authoritative book scrapes away these bad features to reveal a subset of JavaScript that's more reliable, readable, and maintainable than the language as a whole—a subset you can use to create truly extensible and efficient code.",
+      "overview": "A deep look into the core features of JavaScript.",
+      "long_description": "This book removes the bad parts of JavaScript and focuses on the reliable, maintainable subset of the language.",
       "price": 25,
-      "poster": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "poster": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a",
       "image_local": "",
       "rating": 4.2,
       "in_stock": true,
@@ -63,17 +63,276 @@
     {
       "id": 6,
       "name": "Refactoring",
-      "overview": "Refactoring is about improving the design of existing code. It is the process of changing a software system in such a way that it does not alter the external behavior of the code yet improves its internal structure.",
-      "long_description": "Refactoring is about improving the design of existing code. It is the process of changing a software system in such a way that it does not alter the external behavior of the code yet improves its internal structure. With refactoring, you can take a bad design and rework it into a good one.",
+      "overview": "Improving the design of existing code without changing its behavior.",
+      "long_description": "Martin Fowler explains how to refactor code step by step to make it cleaner and easier to maintain.",
       "price": 45,
-      "poster": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "poster": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
       "image_local": "",
       "rating": 4.7,
       "in_stock": true,
       "best_seller": false
+    },
+    {
+      "id": 7,
+      "name": "Effective Java",
+      "overview": "Best practices for writing robust Java code.",
+      "long_description": "Joshua Bloch shares proven techniques for writing efficient, maintainable, and high-quality Java applications.",
+      "price": 40,
+      "poster": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f",
+      "image_local": "",
+      "rating": 4.9,
+      "in_stock": true,
+      "best_seller": true
+    },
+    {
+      "id": 8,
+      "name": "Introduction to Algorithms",
+      "overview": "The definitive guide to algorithms.",
+      "long_description": "Commonly known as CLRS, this book covers sorting, searching, graph algorithms, and complexity analysis in depth.",
+      "price": 55,
+      "poster": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+      "image_local": "",
+      "rating": 4.8,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 9,
+      "name": "You Don't Know JS Yet",
+      "overview": "Deep understanding of JavaScript internals.",
+      "long_description": "This book explains scopes, closures, async behavior, and how JavaScript actually works under the hood.",
+      "price": 28,
+      "poster": "https://images.unsplash.com/photo-1526378722484-bd91ca387e72",
+      "image_local": "",
+      "rating": 4.6,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 10,
+      "name": "System Design Interview – An Insider’s Guide",
+      "overview": "Learn how to design scalable systems.",
+      "long_description": "Covers real-world system design problems such as URL shorteners, chat systems, and distributed databases.",
+      "price": 48,
+      "poster": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+      "image_local": "",
+      "rating": 4.7,
+      "in_stock": true,
+      "best_seller": true
+    },
+    {
+      "id": 11,
+      "name": "Spring Boot in Action",
+      "overview": "Build production-ready Spring Boot applications.",
+      "long_description": "Hands-on guide to REST APIs, microservices, Spring Security, JPA, and deployment.",
+      "price": 36,
+      "poster": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "image_local": "",
+      "rating": 4.5,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 12,
+      "name": "Designing Data-Intensive Applications",
+      "overview": "A deep dive into modern data systems and scalable architectures.",
+      "long_description": "This book explains the architecture of modern data-intensive applications, covering databases, distributed systems, scalability, and reliability with real-world engineering trade-offs.",
+      "price": 50,
+      "poster": "https://images.unsplash.com/photo-1507842217343-583bb7270b66",
+      "image_local": "",
+      "rating": 4.9,
+      "in_stock": true,
+      "best_seller": true
+    },
+    {
+      "id": 13,
+      "name": "Cracking the Coding Interview",
+      "overview": "189 programming interview questions and solutions.",
+      "long_description": "A must-have interview preparation book covering data structures, algorithms, system design basics, and behavioral interview strategies.",
+      "price": 45,
+      "poster": "https://images.unsplash.com/photo-1528207776546-365bb710ee93",
+      "image_local": "",
+      "rating": 4.8,
+      "in_stock": true,
+      "best_seller": true
+    },
+    {
+      "id": 14,
+      "name": "Grokking Algorithms",
+      "overview": "A friendly illustrated guide to algorithms.",
+      "long_description": "This book explains complex algorithmic concepts using simple language and visuals, making it perfect for beginners.",
+      "price": 32,
+      "poster": "https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0",
+      "image_local": "",
+      "rating": 4.6,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 15,
+      "name": "Microservices Patterns",
+      "overview": "Best practices for building microservices architectures.",
+      "long_description": "Covers decomposition strategies, inter-service communication, data management, and deployment patterns for microservices.",
+      "price": 48,
+      "poster": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "image_local": "",
+      "rating": 4.7,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 16,
+      "name": "Domain-Driven Design",
+      "overview": "Tackling complexity in the heart of software.",
+      "long_description": "Eric Evans introduces domain-driven design concepts that help teams model complex business domains effectively.",
+      "price": 52,
+      "poster": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+      "image_local": "",
+      "rating": 4.5,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 17,
+      "name": "Kubernetes Up & Running",
+      "overview": "Dive into container orchestration with Kubernetes.",
+      "long_description": "Learn how to deploy, manage, and scale containerized applications using Kubernetes in production environments.",
+      "price": 41,
+      "poster": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+      "image_local": "",
+      "rating": 4.4,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 18,
+      "name": "Docker Deep Dive",
+      "overview": "A complete guide to Docker and containerization.",
+      "long_description": "Explains Docker fundamentals, images, containers, networking, and best practices for production use.",
+      "price": 34,
+      "poster": "https://images.unsplash.com/photo-1517430816045-df4b7de01a9a",
+      "image_local": "",
+      "rating": 4.3,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 19,
+      "name": "The Mythical Man-Month",
+      "overview": "Essays on software engineering.",
+      "long_description": "A classic book discussing software project management, productivity, and why adding more developers can slow a project.",
+      "price": 30,
+      "poster": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d",
+      "image_local": "",
+      "rating": 4.2,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 20,
+      "name": "Algorithms to Live By",
+      "overview": "Applying computer science concepts to everyday life.",
+      "long_description": "Explores how algorithms can help with decision-making, scheduling, and optimization in daily life.",
+      "price": 27,
+      "poster": "https://images.unsplash.com/photo-1473862170182-6bfac4e24c89",
+      "image_local": "",
+      "rating": 4.1,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 21,
+      "name": "Programming Pearls",
+      "overview": "Timeless programming problem-solving techniques.",
+      "long_description": "Focuses on algorithmic thinking, problem decomposition, and elegant coding solutions.",
+      "price": 33,
+      "poster": "https://images.unsplash.com/photo-1512820790803-83ca734da794",
+      "image_local": "",
+      "rating": 4.6,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 22,
+      "name": "The Art of Computer Programming (Vol. 1)",
+      "overview": "Foundational concepts of computer algorithms.",
+      "long_description": "Donald Knuth’s legendary work covering fundamental algorithms and mathematical techniques in computer science.",
+      "price": 65,
+      "poster": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6",
+      "image_local": "",
+      "rating": 4.9,
+      "in_stock": true,
+      "best_seller": true
+    },
+    {
+      "id": 23,
+      "name": "Learning React",
+      "overview": "Modern React development from fundamentals to hooks.",
+      "long_description": "Covers JSX, hooks, state management, performance optimization, and best practices for React apps.",
+      "price": 29,
+      "poster": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f",
+      "image_local": "",
+      "rating": 4.4,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 24,
+      "name": "Node.js Design Patterns",
+      "overview": "Best practices for building scalable Node.js applications.",
+      "long_description": "Explains proven design patterns, async flows, and architectural techniques for Node.js systems.",
+      "price": 39,
+      "poster": "https://images.unsplash.com/photo-1516251193007-45ef944ab0c6",
+      "image_local": "",
+      "rating": 4.5,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 25,
+      "name": "Soft Skills: The Software Developer’s Life Manual",
+      "overview": "Career and life advice for developers.",
+      "long_description": "Covers productivity, communication, career growth, and financial planning for software engineers.",
+      "price": 26,
+      "poster": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+      "image_local": "",
+      "rating": 4.3,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 26,
+      "name": "System Design Made Easy",
+      "overview": "Beginner-friendly guide to system design concepts.",
+      "long_description": "Introduces scalability, load balancing, caching, and databases using simple examples and diagrams.",
+      "price": 37,
+      "poster": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      "image_local": "",
+      "rating": 4.4,
+      "in_stock": true,
+      "best_seller": false
+    },
+    {
+      "id": 27,
+      "name": "Advanced Java Concurrency",
+      "overview": "Master multithreading, concurrency, and performance tuning in Java.",
+      "long_description": "This book dives deep into Java concurrency concepts such as threads, executors, synchronization, locks, concurrent collections, and performance optimization. Ideal for backend engineers preparing for high-scale systems and interviews.",
+      "price": 44,
+      "poster": "https://images.unsplash.com/photo-1517430816045-df4b7de01a9a",
+      "image_local": "",
+      "rating": 4.6,
+      "in_stock": true,
+      "best_seller": false
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "email": "tornovdutta@gmail.com",
+      "password": "$2a$10$IQAMaywk8nUrtZtI.Z0M0umkWBHbpb0h/ghWIEJBP594TvWI3MH52",
+      "name": "Tornov",
+      "id": 1
+    }
+  ],
   "orders": [
     {
       "cartList": [
@@ -110,30 +369,6 @@
         "id": null
       },
       "id": 1
-    },
-    {
-      "cartList": [
-        {
-          "id": 1,
-          "name": "The Complete Coding Interview Guide in Java",
-          "overview": "The Complete Coding Interview Guide in Java is an all-inclusive solution guide with meticulously crafted code examples and proven best practices for tackling the toughest coding interview questions.",
-          "long_description": "The Complete Coding Interview Guide in Java is an all-inclusive solution guide with meticulously crafted code examples and proven best practices for tackling the toughest coding interview questions. This book will help you to verify your Java knowledge and basic coding skills to the interviewer.",
-          "price": 29,
-          "poster": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-          "image_local": "",
-          "rating": 5,
-          "in_stock": true,
-          "best_seller": true
-        }
-      ],
-      "amount_paid": 29,
-      "quantity": 1,
-      "user": {
-        "name": "Tornov",
-        "email": "tornovdutta@gmail.com",
-        "id": null
-      },
-      "id": 2
     }
   ]
 }
