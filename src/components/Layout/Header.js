@@ -51,15 +51,7 @@ export const Header = () => {
                         </Link>
                     </div>
 
-                    {/* Navigation - Centered (Hidden on Mobile) */}
-                    <div className="hidden md:flex flex-1 justify-center">
-                        <ul className="flex flex-row space-x-8 text-lg font-medium">
-                            <li>
-                                <NavLink to="/products" className={({ isActive }) => isActive ? "text-blue-700 dark:text-blue-400" : "text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-white"}>EBooks</NavLink>
-                            </li>
-                            {/* Add more links here if needed */}
-                        </ul>
-                    </div>
+                    
 
                     {/* Right Side Actions */}
                     <div className="flex items-center relative">
