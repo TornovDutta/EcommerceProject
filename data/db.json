@@ -333,5 +333,30 @@
       "id": 1
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "cartList": [
+        {
+          "id": 2,
+          "name": "Head First Design Patterns",
+          "overview": "Head First Design Patterns is a great way to look at the tough subject of design patterns.",
+          "long_description": "Head First Design Patterns simulates the way your brain works to make learning more effective using cognitive science and multi-sensory techniques.",
+          "price": 35,
+          "poster": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73",
+          "image_local": "",
+          "rating": 4.5,
+          "in_stock": true,
+          "best_seller": false
+        }
+      ],
+      "amount_paid": 35,
+      "quantity": 1,
+      "user": {
+        "name": "Tornov",
+        "email": "tornov@gmail.com",
+        "id": null
+      },
+      "id": 1
+    }
+  ]
 }
