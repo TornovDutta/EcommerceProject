@@ -328,47 +328,10 @@
   "users": [
     {
       "email": "tornovdutta@gmail.com",
-      "password": "$2a$10$IQAMaywk8nUrtZtI.Z0M0umkWBHbpb0h/ghWIEJBP594TvWI3MH52",
-      "name": "Tornov",
+      "password": "$2a$10$0MpcuAMgNbO55vTYP4DwuOPmSx8iLX5N.N85glWeEn1cuSTpsByxa",
+      "name": "tornovdutta",
       "id": 1
     }
   ],
-  "orders": [
-    {
-      "cartList": [
-        {
-          "id": 1,
-          "name": "The Complete Coding Interview Guide in Java",
-          "overview": "The Complete Coding Interview Guide in Java is an all-inclusive solution guide with meticulously crafted code examples and proven best practices for tackling the toughest coding interview questions.",
-          "long_description": "The Complete Coding Interview Guide in Java is an all-inclusive solution guide with meticulously crafted code examples and proven best practices for tackling the toughest coding interview questions. This book will help you to verify your Java knowledge and basic coding skills to the interviewer.",
-          "price": 29,
-          "poster": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-          "image_local": "",
-          "rating": 5,
-          "in_stock": true,
-          "best_seller": true
-        },
-        {
-          "id": 3,
-          "name": "Clean Code",
-          "overview": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code.",
-          "long_description": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn't have to be that way. Noted software expert Robert C. Martin presents a revolutionary paradigm with Clean Code: A Handbook of Agile Software Craftsmanship.",
-          "price": 42,
-          "poster": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-          "image_local": "",
-          "rating": 5,
-          "in_stock": true,
-          "best_seller": true
-        }
-      ],
-      "amount_paid": 71,
-      "quantity": 2,
-      "user": {
-        "name": "Tornov",
-        "email": "tornov@gmail.com",
-        "id": null
-      },
-      "id": 1
-    }
-  ]
+  "orders": []
 }

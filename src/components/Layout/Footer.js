@@ -10,13 +10,13 @@ export const Footer = () => {
                 </span>
                 <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
                     <li>
-                        <a href="https://github.com" target="_blank" rel="noreferrer" className="mr-4 hover:underline md:mr-6 ">GitHub</a>
+                        <a href="https://github.com/TornovDutta/EcommerceProject" target="_blank" rel="noreferrer" className="mr-4 hover:underline md:mr-6 ">GitHub</a>
                     </li>
                     <li>
-                        <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="mr-4 hover:underline md:mr-6">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/tornov-dutta/" target="_blank" rel="noreferrer" className="mr-4 hover:underline md:mr-6">LinkedIn</a>
                     </li>
                     <li>
-                        <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:underline">Twitter</a>
+                        <a href="https://x.com/TornovDutta" target="_blank" rel="noreferrer" className="hover:underline">Twitter</a>
                     </li>
                 </ul>
             </div>
