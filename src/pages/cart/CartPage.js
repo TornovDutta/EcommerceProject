@@ -1,44 +1,10 @@
-import { useAuth, useCart } from "../../context";
+import { useCart } from "../../context";
 import { CartEmpty } from "../../components/Element/CartEmpty";
 import { CartCard } from "../../components/Element/CartCard";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 export const CartPage = () => {
-    const { cartList, total, clearCart } = useCart();
-    const { token, id } = useAuth();
-    const navigate = useNavigate();
-
-    async function handleOrder() {
-        try {
-            const order = {
-                cartList: cartList,
-                amount_paid: total,
-                quantity: cartList.length,
-                user: {
-                    name: "Codebook User", // ideally verify user details
-                    email: "example@example.com",
-                    id: id
-                }
-            }
-            const response = await fetch("/660/orders", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
-                },
-                body: JSON.stringify(order)
-            });
-            if (!response.ok) {
-                throw { message: response.statusText, status: response.status }; //eslint-disable-line
-            }
-            const data = await response.json();
-            clearCart();
-            navigate("/order-summary", { state: { data: data, status: true } });
-        } catch (error) {
-            toast.error(error.message);
-        }
-    }
+    const { cartList, total } = useCart();
 
     return (
         <main>
@@ -62,9 +28,9 @@ export const CartPage = () => {
                                     <span>Total Amount:</span>
                                     <span className="text-blue-600 dark:text-blue-400">${total}</span>
                                 </div>
-                                <button onClick={handleOrder} type="button" className="w-full text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-lg px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 transition duration-300">
-                                    PLACE ORDER <i className="ml-2 bi bi-arrow-right"></i>
-                                </button>
+                                <Link to="/checkout" className="block w-full text-center text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-lg px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 transition duration-300">
+                                    CHECKOUT <i className="ml-2 bi bi-arrow-right"></i>
+                                </Link>
                             </div>
                         </div>
                     </div>

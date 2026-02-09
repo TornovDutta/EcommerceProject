@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { HomePage, ProductsPages, ProductDetails, Login, Register, CartPage, OrderPage, DashBoardPage, PageNotFound, OrderSuccessPage } from "../pages";
+import { HomePage, ProductsPages, ProductDetails, Login, Register, CartPage, OrderPage, DashBoardPage, PageNotFound, OrderSuccessPage, CheckoutPage } from "../pages";
 
 export const AllRouter = () => {
   return (
@@ -12,6 +12,7 @@ export const AllRouter = () => {
       <Route path="/register" element={<Register />} />
 
       <Route path="/cart" element={<CartPage />} />
+      <Route path="/checkout" element={<CheckoutPage />} />
       <Route path="/order-summary" element={<OrderSuccessPage />} />
       <Route path="/dashboard" element={<DashBoardPage />} />
 
