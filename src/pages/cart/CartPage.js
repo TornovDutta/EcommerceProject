@@ -1,9 +1,44 @@
-import { useCart } from "../../context";
+import { useAuth, useCart } from "../../context";
 import { CartEmpty } from "../../components/Element/CartEmpty";
 import { CartCard } from "../../components/Element/CartCard";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const CartPage = () => {
-    const { cartList, total } = useCart();
+    const { cartList, total, clearCart } = useCart();
+    const { token, id } = useAuth();
+    const navigate = useNavigate();
+
+    async function handleOrder() {
+        try {
+            const order = {
+                cartList: cartList,
+                amount_paid: total,
+                quantity: cartList.length,
+                user: {
+                    name: "Codebook User", // ideally verify user details
+                    email: "example@example.com",
+                    id: id
+                }
+            }
+            const response = await fetch("/660/orders", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify(order)
+            });
+            if (!response.ok) {
+                throw { message: response.statusText, status: response.status }; //eslint-disable-line
+            }
+            const data = await response.json();
+            clearCart();
+            navigate("/order-summary", { state: { data: data, status: true } });
+        } catch (error) {
+            toast.error(error.message);
+        }
+    }
 
     return (
         <main>
@@ -27,7 +62,7 @@ export const CartPage = () => {
                         </div>
                     </div>
                     <div className="text-right my-5">
-                        <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-base px-7 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700">
+                        <button onClick={handleOrder} type="button" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-base px-7 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700">
                             PLACE ORDER <i className="ml-2 bi bi-arrow-right"></i>
                         </button>
                     </div>
