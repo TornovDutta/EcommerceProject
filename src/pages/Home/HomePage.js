@@ -4,10 +4,11 @@ import { ProductsCard } from "../../components";
 
 export const HomePage = () => {
   const [products, setProducts] = useState([]);
+  const [openFaqId, setOpenFaqId] = useState(null);
 
   useEffect(() => {
     async function fetchProducts() {
-      const response = await fetch("http://localhost:8000/products?best_seller=true&_limit=6"); // Modified to show 6
+      const response = await fetch("http://localhost:8000/products?best_seller=true&_limit=6");
       const data = await response.json();
       setProducts(data);
     }
@@ -37,6 +38,10 @@ export const HomePage = () => {
     }
   ];
 
+  const toggleFaq = (id) => {
+    setOpenFaqId(openFaqId === id ? null : id);
+  };
+
   return (
     <main>
       <section className="flex flex-col lg:flex-row dark:text-slate-100 items-center">
@@ -61,11 +66,28 @@ export const HomePage = () => {
 
       <section className="my-20">
         <h2 className="text-2xl text-center font-semibold dark:text-slate-100 mb-10 underline underline-offset-8">Frequently Asked Questions</h2>
-        <div className="max-w-4xl mx-auto space-y-4 px-4">
+        <div className="max-w-4xl mx-auto space-y-3 px-4">
           {faqs.map((faq) => (
-            <div key={faq.id} className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{faq.question}</h3>
-              <p className="text-gray-700 dark:text-gray-400">{faq.answer}</p>
+            <div key={faq.id} className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+              <button
+                onClick={() => toggleFaq(faq.id)}
+                className="w-full flex items-center justify-between p-5 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+              >
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white text-left">{faq.question}</h3>
+                <svg
+                  className={`w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform duration-200 ${openFaqId === faq.id ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {openFaqId === faq.id && (
+                <div className="p-5 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>
