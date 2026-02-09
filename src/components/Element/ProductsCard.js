@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../../context";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../../store/cartSlice";
 
 export const ProductsCard = ({ product }) => {
-    const { cartList, addToCart, removeFromCart } = useCart();
+    const dispatch = useDispatch();
+    const cartList = useSelector(state => state.cart.cartList);
     const [inCart, setInCart] = useState(false);
     const { id, name, overview, poster, price, rating, best_seller } = product;
 
@@ -42,9 +44,9 @@ export const ProductsCard = ({ product }) => {
                 <div className="flex justify-between items-center">
                     <span className="text-2xl font-bold text-gray-900 dark:text-white">${price}</span>
                     {inCart ? (
-                        <button onClick={() => removeFromCart(product)} className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800" disabled={product.in_stock ? "" : "disabled"}>Remove Item <i className="ml-1 bi bi-trash3"></i></button>
+                        <button onClick={() => dispatch(removeFromCart(product))} className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800" disabled={product.in_stock ? "" : "disabled"}>Remove Item <i className="ml-1 bi bi-trash3"></i></button>
                     ) : (
-                        <button onClick={() => addToCart(product)} className={`inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 ${product.in_stock ? "" : "cursor-not-allowed"}`} disabled={product.in_stock ? "" : "disabled"}>Add To Cart <i className="ml-1 bi bi-plus-lg"></i></button>
+                        <button onClick={() => dispatch(addToCart(product))} className={`inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 ${product.in_stock ? "" : "cursor-not-allowed"}`} disabled={product.in_stock ? "" : "disabled"}>Add To Cart <i className="ml-1 bi bi-plus-lg"></i></button>
                     )}
                 </div>
             </div>

@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
-import { useCart } from "../../context"
+import { useDispatch } from "react-redux"
+import { removeFromCart } from "../../store/cartSlice"
 
 export const CartCard = ({ product }) => {
-    const { removeFromCart } = useCart();
+    const dispatch = useDispatch();
 
     return (
         <div className="flex justify-between items-center border rounded-lg shadow-sm dark:border-slate-700 p-4 mb-4 bg-white dark:bg-gray-800">
@@ -14,7 +15,7 @@ export const CartCard = ({ product }) => {
                     <Link to={`/products/${product.id}`}>
                         <p className="text-lg font-semibold dark:text-slate-200 line-clamp-1">{product.name}</p>
                     </Link>
-                    <button onClick={() => removeFromCart(product)} className="text-sm text-red-500 hover:text-red-700 font-medium self-start mt-2">Remove</button>
+                    <button onClick={() => dispatch(removeFromCart(product))} className="text-sm text-red-500 hover:text-red-700 font-medium self-start mt-2">Remove</button>
                 </div>
             </div>
             <div className="text-lg font-semibold dark:text-slate-200 text-right">

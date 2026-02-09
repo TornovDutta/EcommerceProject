@@ -1,10 +1,11 @@
-import { useCart } from "../../context";
+import { useSelector } from "react-redux";
 import { CartEmpty } from "../../components/Element/CartEmpty";
 import { CartCard } from "../../components/Element/CartCard";
 import { Link } from "react-router-dom";
 
 export const CartPage = () => {
-    const { cartList, total } = useCart();
+    const cartList = useSelector(state => state.cart.cartList);
+    const total = useSelector(state => state.cart.total);
 
     return (
         <main>

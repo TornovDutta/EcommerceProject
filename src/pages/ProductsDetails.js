@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useCart } from "../context";
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart, removeFromCart } from "../store/cartSlice";
 import { toast } from "react-toastify";
 
 export const ProductDetails = () => {
     const [product, setProduct] = useState({});
     const { id } = useParams();
-    const { cartList, addToCart, removeFromCart } = useCart();
+    const dispatch = useDispatch();
+    const cartList = useSelector(state => state.cart.cartList);
     const [inCart, setInCart] = useState(false);
 
     useEffect(() => {
@@ -22,9 +24,16 @@ export const ProductDetails = () => {
 
     useEffect(() => {
         async function fetchProduct() {
-            const response = await fetch(`http://localhost:8000/products/${id}`);
-            const data = await response.json();
-            setProduct(data);
+            try {
+                const response = await fetch(`http://localhost:8000/products/${id}`);
+                if (!response.ok) {
+                    throw { message: response.statusText, status: response.status }; //eslint-disable-line
+                }
+                const data = await response.json();
+                setProduct(data);
+            } catch (error) {
+                toast.error(error.message);
+            }
         }
         fetchProduct();
     }, [id]);
@@ -51,9 +60,9 @@ export const ProductDetails = () => {
                     </p>
                     <div className="my-7 flex flex-wrap gap-4 items-center">
                         {inCart ? (
-                            <button onClick={() => removeFromCart(product)} className="flex-1 text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" disabled={product.in_stock ? "" : "disabled"}>Remove Item <i className="ml-1 bi bi-trash3"></i></button>
+                            <button onClick={() => dispatch(removeFromCart(product))} className="flex-1 text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" disabled={product.in_stock ? "" : "disabled"}>Remove Item <i className="ml-1 bi bi-trash3"></i></button>
                         ) : (
-                            <button onClick={() => addToCart(product)} className={`flex-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ${product.in_stock ? "" : "cursor-not-allowed"}`} disabled={product.in_stock ? "" : "disabled"}>Add To Cart <i className="ml-1 bi bi-plus-lg"></i></button>
+                            <button onClick={() => dispatch(addToCart(product))} className={`flex-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ${product.in_stock ? "" : "cursor-not-allowed"}`} disabled={product.in_stock ? "" : "disabled"}>Add To Cart <i className="ml-1 bi bi-plus-lg"></i></button>
                         )}
                     </div>
 

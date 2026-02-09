@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
-import { useAuth, useCart } from "../../context";
+import { useSelector, useDispatch } from "react-redux";
+import { clearCart } from "../../store/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export const CheckoutPage = () => {
-    const { cartList, total, clearCart } = useCart();
-    const { token, id } = useAuth();
+    const dispatch = useDispatch();
+    const cartList = useSelector(state => state.cart.cartList);
+    const total = useSelector(state => state.cart.total);
+    const token = useSelector(state => state.auth.token);
+    const id = useSelector(state => state.auth.id);
     const navigate = useNavigate();
     const [user, setUser] = useState({
         name: "",
@@ -25,7 +29,9 @@ export const CheckoutPage = () => {
             const data = await response.json();
             setUser(data);
         }
-        getUser();
+        if (id) {
+            getUser();
+        }
     }, [id, token]); //eslint-disable-line
 
     async function handleOrder(event) {
@@ -41,7 +47,7 @@ export const CheckoutPage = () => {
                     id: id
                 }
             }
-            const response = await fetch("http://localhost:8000/600/orders", {
+            const response = await fetch("http://localhost:8000/orders", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -53,7 +59,7 @@ export const CheckoutPage = () => {
                 throw { message: response.statusText, status: response.status }; //eslint-disable-line
             }
             const data = await response.json();
-            clearCart();
+            dispatch(clearCart());
             navigate("/order-summary", { state: { data: data, status: true } });
         } catch (error) {
             toast.error(error.message);
