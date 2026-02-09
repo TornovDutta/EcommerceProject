@@ -1,0 +1,78 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "The Complete Coding Interview Guide in Java",
+            "overview": "The Complete Coding Interview Guide in Java is an all-inclusive solution guide with meticulously crafted code examples and proven best practices for tackling the toughest coding interview questions.",
+            "long_description": "The Complete Coding Interview Guide in Java is an all-inclusive solution guide with meticulously crafted code examples and proven best practices for tackling the toughest coding interview questions. This book will help you to verify your Java knowledge and basic coding skills to the interviewer.",
+            "price": 29,
+            "poster": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            "image_local": "",
+            "rating": 5,
+            "in_stock": true,
+            "best_seller": true
+        },
+        {
+            "id": 2,
+            "name": "Head First Design Patterns",
+            "overview": "Head First Design Patterns is a great way to look at the tough subject of design patterns. This book simulates the way your brain works to make the learning process more efficient.",
+            "long_description": "Head First Design Patterns is a great way to look at the tough subject of design patterns. This book simulates the way your brain works to make the learning process more efficient. It uses the latest research in cognitive science and learning theory to craft a multi-sensory learning experience.",
+            "price": 35,
+            "poster": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            "image_local": "",
+            "rating": 4.5,
+            "in_stock": true,
+            "best_seller": false
+        },
+        {
+            "id": 3,
+            "name": "Clean Code",
+            "overview": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code.",
+            "long_description": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn't have to be that way. Noted software expert Robert C. Martin presents a revolutionary paradigm with Clean Code: A Handbook of Agile Software Craftsmanship.",
+            "price": 42,
+            "poster": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            "image_local": "",
+            "rating": 5,
+            "in_stock": true,
+            "best_seller": true
+        },
+        {
+            "id": 4,
+            "name": "The Pragmatic Programmer",
+            "overview": "The Pragmatic Programmer is one of those rare tech books you’ll read, re-read, and read again over the years. Whether you’re new to the field or an experienced practitioner, you’ll come away with fresh insights each and every time.",
+            "long_description": "The Pragmatic Programmer is one of those rare tech books you’ll read, re-read, and read again over the years. Whether you’re new to the field or an experienced practitioner, you’ll come away with fresh insights each and every time. Dave Thomas and Andy Hunt wrote the first edition of this influential book in 1999 to help their clients create better software and rediscover the joy of coding.",
+            "price": 38,
+            "poster": "https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            "image_local": "",
+            "rating": 4.8,
+            "in_stock": true,
+            "best_seller": true
+        },
+        {
+            "id": 5,
+            "name": "JavaScript: The Good Parts",
+            "overview": "Most programming languages contain good and bad parts, but JavaScript has more than its share of the bad, having been developed and released in a hurry before it could be refined.",
+            "long_description": "Most programming languages contain good and bad parts, but JavaScript has more than its share of the bad, having been developed and released in a hurry before it could be refined. This authoritative book scrapes away these bad features to reveal a subset of JavaScript that's more reliable, readable, and maintainable than the language as a whole—a subset you can use to create truly extensible and efficient code.",
+            "price": 25,
+            "poster": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            "image_local": "",
+            "rating": 4.2,
+            "in_stock": true,
+            "best_seller": false
+        },
+        {
+            "id": 6,
+            "name": "Refactoring",
+            "overview": "Refactoring is about improving the design of existing code. It is the process of changing a software system in such a way that it does not alter the external behavior of the code yet improves its internal structure.",
+            "long_description": "Refactoring is about improving the design of existing code. It is the process of changing a software system in such a way that it does not alter the external behavior of the code yet improves its internal structure. With refactoring, you can take a bad design and rework it into a good one.",
+            "price": 45,
+            "poster": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            "image_local": "",
+            "rating": 4.7,
+            "in_stock": true,
+            "best_seller": false
+        }
+    ],
+    "users": [],
+    "orders": []
+}
