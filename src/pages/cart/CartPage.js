@@ -45,29 +45,21 @@ export const CartPage = () => {
             {cartList.length ? (
                 <section>
                     <p className="text-2xl text-center font-semibold dark:text-slate-100 my-10 underline underline-offset-8">My Cart ({cartList.length})</p>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-stretch max-w-4xl m-auto px-2">
                         {cartList.map((product) => (
                             <CartCard key={product.id} product={product} />
                         ))}
                     </div>
-                </section>
-            ) : <CartEmpty />}
-
-            {cartList.length > 0 && (
-                <section className="max-w-4xl m-auto">
-                    <div className="flex flex-col p-2 border-b dark:border-slate-700 text-lg dark:text-slate-100">
-                        <div className="flex justify-between my-2">
-                            <span className="font-semibold">Total Amount:</span>
-                            <span>${total}</span>
+                    <div className="max-w-4xl m-auto p-4 mb-10 flex flex-col md:flex-row justify-between items-center bg-white dark:bg-gray-800 rounded-lg shadow-md border dark:border-slate-700">
+                        <div className="text-xl font-semibold dark:text-slate-100 mb-4 md:mb-0">
+                            Total Amount: <span className="text-blue-600 dark:text-blue-400">${total}</span>
                         </div>
-                    </div>
-                    <div className="text-right my-5">
-                        <button onClick={handleOrder} type="button" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-base px-7 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700">
+                        <button onClick={handleOrder} type="button" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-lg px-8 py-3 dark:bg-blue-600 dark:hover:bg-blue-700 transition duration-300">
                             PLACE ORDER <i className="ml-2 bi bi-arrow-right"></i>
                         </button>
                     </div>
                 </section>
-            )}
+            ) : <CartEmpty />}
         </main>
     )
 }
