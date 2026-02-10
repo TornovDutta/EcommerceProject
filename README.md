@@ -65,8 +65,8 @@ CodeBook is a modern, full-featured e-commerce web application for browsing and 
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd codebook
+   git clone https://github.com/TornovDutta/EcommerceProject.git
+   cd EcommerceProject
    ```
 
 2. **Install dependencies**
