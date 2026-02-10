@@ -3,90 +3,100 @@ import { useSelector } from "react-redux";
 import { ProductsCard } from "../../components";
 
 export const DashBoardPage = () => {
-    const [products, setProducts] = useState([]);
-    const [openFaqId, setOpenFaqId] = useState(null);
-    const user = useSelector(state => state.auth.token);
+    const [suggestedProducts, setSuggestedProducts] = useState([]);
+    const [orders, setOrders] = useState([]);
 
+    // logged-in user from redux
+    const user = useSelector(state => state.auth.user);
+    // expected: { id, name, email }
+
+    // fetch suggested products (used only if no orders)
     useEffect(() => {
         async function fetchProducts() {
-            const response = await fetch("http://localhost:8000/products?_limit=3");
-            const data = await response.json();
-            setProducts(data);
+            const res = await fetch("http://localhost:8000/products?_limit=3");
+            const data = await res.json();
+            setSuggestedProducts(data);
         }
         fetchProducts();
     }, []);
 
-    const faqs = [
-        {
-            id: 1,
-            question: "Why should I use CodeBook?",
-            answer: "CodeBook is the premier destination for programming ebooks, offering a curated selection of the highest quality technical literature to help you master your craft."
-        },
-        {
-            id: 2,
-            question: "How do I access my purchased books?",
-            answer: "All your purchased books are available in your personal library immediately after checkout. You can read them online or download them."
-        },
-        {
-            id: 3,
-            question: "Is there a return policy?",
-            answer: "We offer a 7-day money-back guarantee on all purchases if you are not satisfied with the quality of the ebook."
-        },
-        {
-            id: 4,
-            question: "Do you offer customer support?",
-            answer: "Yes, our dedicated support team is available 24/7 to assist you with any issues or questions you may have."
-        }
-    ];
+    // fetch orders of logged-in user (EMAIL BASED – IMPORTANT)
+    useEffect(() => {
+        async function fetchOrders() {
+            if (!user?.email) {
+                console.log("No user email found:", user);
+                return;
+            }
 
-    const toggleFaq = (id) => {
-        setOpenFaqId(openFaqId === id ? null : id);
-    };
+            try {
+                const res = await fetch("http://localhost:8000/orders");
+                const data = await res.json();
+                console.log("All orders:", data);
+                console.log("User email:", user.email);
+
+                const userOrders = data.filter(order => {
+                    const matches = order.user?.email === user.email;
+                    console.log(`Order ${order.id}: ${order.user?.email} === ${user.email}? ${matches}`);
+                    return matches;
+                });
+
+                console.log("Filtered orders:", userOrders);
+                setOrders(userOrders);
+            } catch (error) {
+                console.error("Error fetching orders:", error);
+                setOrders([]);
+            }
+        }
+
+        fetchOrders();
+    }, [user]);
+
+    // flatten ordered products
+    const orderedProducts = orders.flatMap(order => order.cartList);
 
     return (
         <main>
             <section>
-                <p className="text-2xl text-center font-semibold dark:text-slate-100 my-10 underline underline-offset-8">My Dashboard</p>
+                <p className="text-2xl text-center font-semibold dark:text-slate-100 my-10 underline underline-offset-8">
+                    My Dashboard
+                </p>
             </section>
 
-            <section className="max-w-4xl mx-auto px-4">
-                <p className="text-center dark:text-slate-100 text-lg mb-8">Welcome back! Here are some recommended reads for you.</p>
+            {/* NO ORDERS → SHOW SUGGESTIONS */}
+            {orderedProducts.length === 0 && (
+                <section className="max-w-4xl mx-auto px-4 mb-16">
+                    <p className="text-center dark:text-slate-100 text-lg mb-8">
+                        You haven’t ordered yet — here are some recommended reads
+                    </p>
 
-                <div className="flex flex-wrap justify-center lg:flex-row gap-5 mb-16">
-                    {products.map((product) => (
-                        <ProductsCard key={product.id} product={product} />
-                    ))}
-                </div>
-            </section>
+                    <div className="flex flex-wrap justify-center gap-5">
+                        {suggestedProducts.map(product => (
+                            <ProductsCard
+                                key={product.id}
+                                product={product}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )}
 
-            <section className="max-w-4xl mx-auto px-4 mb-20">
-                <h2 className="text-2xl text-center font-semibold dark:text-slate-100 mb-10 underline underline-offset-8">Frequently Asked Questions</h2>
-                <div className="space-y-3">
-                    {faqs.map((faq) => (
-                        <div key={faq.id} className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-                            <button
-                                onClick={() => toggleFaq(faq.id)}
-                                className="w-full flex items-center justify-between p-5 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
-                            >
-                                <h3 className="text-lg font-semibold text-gray-900 dark:text-white text-left">{faq.question}</h3>
-                                <svg
-                                    className={`w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform duration-200 ${openFaqId === faq.id ? 'rotate-180' : ''}`}
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            {openFaqId === faq.id && (
-                                <div className="p-5 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-                                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </section>
+            {/* ORDERS EXIST → SHOW ORDERED PRODUCTS */}
+            {orderedProducts.length > 0 && (
+                <section className="max-w-4xl mx-auto px-4 mb-20">
+                    <p className="text-2xl text-center font-semibold dark:text-slate-100 mb-10 underline underline-offset-8">
+                        Your Purchased Books
+                    </p>
+
+                    <div className="flex flex-wrap justify-center gap-5">
+                        {orderedProducts.map((product, index) => (
+                            <ProductsCard
+                                key={`${product.id}-${index}`}
+                                product={product}
+                            />
+                        ))}
+                    </div>
+                </section>
+            )}
         </main>
-    )
-}
+    );
+};

@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 const initialState = {
     token: JSON.parse(sessionStorage.getItem("token")) || null,
     id: JSON.parse(sessionStorage.getItem("cbid")) || null,
+    user: JSON.parse(sessionStorage.getItem("user")) || null,
     loading: false,
     error: null
 }
@@ -57,8 +58,10 @@ const authSlice = createSlice({
         logout(state) {
             state.token = null;
             state.id = null;
+            state.user = null;
             sessionStorage.removeItem("token");
             sessionStorage.removeItem("cbid");
+            sessionStorage.removeItem("user");
         }
     },
     extraReducers: (builder) => {
@@ -73,8 +76,10 @@ const authSlice = createSlice({
                 if (action.payload.accessToken) {
                     state.token = action.payload.accessToken;
                     state.id = action.payload.user.id;
+                    state.user = action.payload.user;
                     sessionStorage.setItem("token", JSON.stringify(action.payload.accessToken));
                     sessionStorage.setItem("cbid", JSON.stringify(action.payload.user.id));
+                    sessionStorage.setItem("user", JSON.stringify(action.payload.user));
                     toast.success("Account Created Successfully!");
                 }
             })
@@ -93,8 +98,10 @@ const authSlice = createSlice({
                 if (action.payload.accessToken) {
                     state.token = action.payload.accessToken;
                     state.id = action.payload.user.id;
+                    state.user = action.payload.user;
                     sessionStorage.setItem("token", JSON.stringify(action.payload.accessToken));
                     sessionStorage.setItem("cbid", JSON.stringify(action.payload.user.id));
+                    sessionStorage.setItem("user", JSON.stringify(action.payload.user));
                     toast.success("Logged In Successfully!");
                 }
             })
